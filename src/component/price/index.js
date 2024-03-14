@@ -1,19 +1,15 @@
 import "./index.css";
 import Box from "../box";
 
-export default function Price({
-  price,
-  discount,
-  currency,
-  cleaning,
-  service,
-  checkin,
-  checkout,
-}) {
+export default function Price({ price, discount, currency, ...rest }) {
   return (
     <Box className="price">
       <div className="price__header">
-        <span className={`price__value ${discount ? "price__value--has-discount" : ""}`}>
+        <span
+          className={`price__value ${
+            discount ? "price__value--has-discount" : ""
+          }`}
+        >
           {currency}
           {price}
         </span>
@@ -24,6 +20,37 @@ export default function Price({
           </span>
         )}
       </div>
-  </Box>;
-  )
+
+      <List {...rest} currency={currency} />
+    </Box>
+  );
+}
+
+function List({ currency, cleaning, service, checkin, checkout }) {
+  return (
+    <ul className="price__list">
+      <li className="price__list-item">
+        <span>Плата за прибирання:</span>
+        <span>
+          {currency}
+          {cleaning}
+        </span>
+      </li>
+      <li className="price__list-item">
+        <span>Сервісний збір:</span>
+        <span>
+          {currency}
+          {service}
+        </span>
+      </li>
+      <li className="price__list-item">
+        <span>Дата прибуття:</span>
+        <span>{checkin}</span>
+      </li>
+      <li className="price__list-item">
+        <span>Дата від'їзду:</span>
+        <span>{checkout}</span>
+      </li>
+    </ul>
+  );
 }
