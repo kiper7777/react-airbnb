@@ -1,0 +1,44 @@
+.contact__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.contact__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact__block-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    line-height: 120%;
+}
+
+.contact__block-info {
+    display: flex;
+    gap: 12px;
+}
+
+.contact__block-value {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.contact__block-value:not(:last-child)::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 4px;
+    border-radius: 4px;
+    background-color: #000;
+}

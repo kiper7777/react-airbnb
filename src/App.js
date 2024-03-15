@@ -7,6 +7,7 @@ import RoomList from "./component/room-list";
 import Description from "./component/description";
 import Details from "./component/details";
 import Amenities from "./component/amenities";
+import Contact from "./component/contact";
 
 function App() {
   const data = {
@@ -195,6 +196,14 @@ function App() {
         hasConciergeService={data.amenities.hasConciergeService}
         hasRoomService={data.amenities.hasRoomService}
         hasChildFriendly={data.amenities.hasChildFriendly}
+      />
+      <Contact
+        name={data.contact_info.name}
+        image={data.contact_info.image}
+        rate={data.contact_info.response_rate}
+        time={data.contact_info.response_time}
+        info={data.contact_info.info}
+        phone={data.contact_info.phone}
       />
     </Page>
   );
