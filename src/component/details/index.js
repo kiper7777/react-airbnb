@@ -1,5 +1,6 @@
 import Box from "../box";
 import Heading from "../heading";
+import ListItem from "../list-item";
 import "./index.css";
 import guest from "../details/guests.svg";
 import bedroom from "../details/bedrooms.svg";
@@ -13,10 +14,10 @@ export default function Details({ guests, bedrooms, beds, baths }) {
         <Heading border>Деталі властивості:</Heading>
 
         <li className="details__list">
-          <span imageSrc={guest}>{guests} гості</span>
-          <span imageSrc={bedroom}>{bedrooms} спальня</span>
-          <span imageSrc={bed}>{beds} ліжко</span>
-          <span imageSrc={bath}>{baths} ванна кімната</span>
+          <ListItem imageSrc={guest}>{guests} гості</ListItem>
+          <ListItem imageSrc={bedroom}>{bedrooms} спальня</ListItem>
+          <ListItem imageSrc={bed}>{beds} ліжко</ListItem>
+          <ListItem imageSrc={bath}>{baths} ванна кімната</ListItem>
         </li>
       </ul>
     </Box>
