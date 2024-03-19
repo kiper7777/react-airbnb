@@ -8,6 +8,9 @@ import Description from "./component/description";
 import Details from "./component/details";
 import Amenities from "./component/amenities";
 import Contact from "./component/contact";
+import Additional from "./component/additional";
+import GuestReviews from "./component/guestReviews";
+import Attractions from "./component/attractions";
 
 function App() {
   const data = {
@@ -103,7 +106,7 @@ function App() {
         "Public buses and taxis available within walking distance.",
       host_languages: ["English", "Spanish"],
       special_offers: "10% discount for bookings of 7 nights or more.",
-      "check-in_instructions":
+      checkin_instructions:
         "Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
     },
 
@@ -205,6 +208,16 @@ function App() {
         info={data.contact_info.info}
         phone={data.contact_info.phone}
       />
+      <Additional
+        rules={data.additional_properties.house_rules}
+        policy={data.additional_properties.cancellation_policy}
+        transportation={data.additional_properties.local_transportation}
+        languages={data.additional_properties.host_languages}
+        offers={data.additional_properties.special_offers}
+        instructions={data.additional_properties.checkin_instructions}
+      />
+      <GuestReviews list={data.guestReviews} />
+      <Attractions list={data.nearbyAttractions} />
     </Page>
   );
 }
